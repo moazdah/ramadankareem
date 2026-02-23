@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="nb-NO">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>Ramadan 2026 | Fremdrift</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="moon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Ramadan symbol">
+            <defs>
+              <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2.8" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path
+              d="M78 18c-18 6-30 23-30 42 0 19 12 36 30 42-6 2-12 3-19 3-25 0-45-20-45-45S34 15 59 15c7 0 13 1 19 3z"
+              class="moon-fill"
+              filter="url(#softGlow)"
+            />
+            <path
+              d="M88 50l4.2 8.6 9.5 1.4-6.9 6.7 1.6 9.4-8.4-4.4-8.4 4.4 1.6-9.4-6.9-6.7 9.5-1.4z"
+              class="star-fill"
+              filter="url(#softGlow)"
+            />
+          </svg>
+        </div>
+
+        <div class="brand-text">
+          <div class="brand-title">Ramadan 2026</div>
+          <div class="brand-subtitle">Fremdrift i sanntid</div>
+        </div>
+      </div>
+
+      <div class="clock-card" role="status" aria-live="polite">
+        <div class="clock-label">Norsk tid</div>
+        <div class="clock-time" id="osloTime">--:--:--</div>
+        <div class="clock-date" id="osloDate">--</div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="hero-top">
+            <div class="hero-line">
+              <h1 class="headline">Du klarer dette</h1>
+              <div class="day-pill" id="ramadanDayPill">Dag -- av --</div>
+            </div>
+
+            <p class="lead">
+              Ramadan kan oppleves tungt og krevende, men samtidig svært meningsfullt.
+              Her ser du hvor langt du har kommet og hvor mye som er igjen.
+            </p>
+          </div>
+
+          <div class="grid">
+            <div class="panel">
+              <div class="panel-title">Fremdrift</div>
+
+              <div class="rings">
+                <div class="ring">
+                  <svg viewBox="0 0 120 120" class="ring-svg" aria-hidden="true">
+                    <circle cx="60" cy="60" r="46" class="ring-track"></circle>
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="46"
+                      class="ring-progress"
+                      id="ringProgress"
+                    ></circle>
+                  </svg>
+
+                  <div class="ring-center">
+                    <div class="big" id="pctDone">0%</div>
+                    <div class="small">fastet</div>
+                  </div>
+                </div>
+
+                <div class="numbers">
+                  <div class="stat">
+                    <div class="stat-label">Gjenstår</div>
+                    <div class="stat-value" id="pctLeft">100%</div>
+                  </div>
+
+                  <div class="stat">
+                    <div class="stat-label">Tid igjen</div>
+                    <div class="stat-value" id="timeLeft">--</div>
+                  </div>
+
+                  <div class="stat">
+                    <div class="stat-label">Tid fastet</div>
+                    <div class="stat-value" id="timeDone">--</div>
+                  </div>
+
+                  <div class="stat">
+                    <div class="stat-label">Slutter</div>
+                    <div class="stat-value" id="endMoment">--</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bar-wrap" aria-label="Prosent bar">
+                <div class="bar">
+                  <div class="bar-fill" id="barFill"></div>
+                </div>
+                <div class="bar-meta">
+                  <span id="barTextLeft">Gjenstår: 100%</span>
+                  <span id="barTextDone">Fastet: 0%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-title">Små påminnelser</div>
+
+              <div class="cards">
+                <div class="quote-card">
+                  <div class="quote-mark" aria-hidden="true">“</div>
+                  <div class="quote-text">Ta det rolig. En dag om gangen.</div>
+                  <div class="quote-sub">Stillhet, fokus, takknemlighet</div>
+                </div>
+
+                <div class="quote-card">
+                  <div class="quote-mark" aria-hidden="true">“</div>
+                  <div class="quote-text">Det som er vanskelig nå kan bli en styrke senere.</div>
+                  <div class="quote-sub">Tålmodighet og mening</div>
+                </div>
+
+                <div class="quote-card">
+                  <div class="quote-mark" aria-hidden="true">“</div>
+                  <div class="quote-text">Når du føler deg sliten, pust sakte og gi deg selv rom.</div>
+                  <div class="quote-sub">Mildhet mot deg selv</div>
+                </div>
+              </div>
+
+              <div class="note">
+                Når de siste ti dagene starter, får du en tydelig påminnelse når du åpner siden.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="floating-layer" aria-hidden="true" id="floatingLayer"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span class="dot"></span>
+        <span>Hvitt, gull og dyp sort, med rolig Ramadan stemning</span>
+      </div>
+    </footer>
+
+    <div class="sun" id="sun" aria-hidden="true"></div>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-top">
+          <div class="modal-title" id="modalTitle">Viktige dager i Ramadan</div>
+          <button class="modal-close" id="modalClose" type="button" aria-label="Lukk">Lukk</button>
+        </div>
+
+        <div class="modal-body" id="modalBody"></div>
+
+        <div class="modal-foot">
+          <div class="modal-hint" id="modalHint"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+      document.addEventListener(
+        "gesturestart",
+        function (e) {
+          e.preventDefault();
+        },
+        { passive: false }
+      );
+
+      document.addEventListener(
+        "dblclick",
+        function (e) {
+          e.preventDefault();
+        },
+        { passive: false }
+      );
+    </script>
+  </body>
+</html>
